@@ -92,3 +92,17 @@ $(call inherit-product-if-exists, vendor/nxp/nxp-vendor.mk)
 
 # include board vendor blobs
 $(call inherit-product-if-exists, vendor/sony/nile-common/nile-partial.mk)
+
+# Kernel modules install path
+KERNEL_MODULES_INSTALL := dlkm
+KERNEL_MODULES_OUT := out/target/product/discovery/$(KERNEL_MODULES_INSTALL)/lib/modules
+
+TARGET_KERNEL_SOURCE := kernel/sony/msm-4.9
+TARGET_KERNEL_VERSION := 4.9
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_APPEND_DTB := true
+KERNEL_DEFCONFIG := nile_discovery_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(shell pwd)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-androidkernel-
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+KERNEL_TO_BUILD_ROOT_OFFSET := ../../../
