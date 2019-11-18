@@ -97,6 +97,8 @@ $(call inherit-product-if-exists, vendor/sony/nile-common/nile-partial.mk)
 KERNEL_MODULES_INSTALL := dlkm
 KERNEL_MODULES_OUT := out/target/product/discovery/$(KERNEL_MODULES_INSTALL)/lib/modules
 
+#KERNEL_LLVM_SUPPORT := true
+AUDIO_FEATURE_ENABLED_DLKM := true
 TARGET_KERNEL_SOURCE := kernel/sony/msm-4.9
 TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_ARCH := arm64
